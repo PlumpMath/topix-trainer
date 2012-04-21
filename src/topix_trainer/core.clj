@@ -22,7 +22,8 @@
       (doseq [file (.list (File. (format "%s/%s" dir topic)))]
         (println "Loading: " file)
         (train-with topic 
-                    (format "%s/%s/%s" dir topic file))))))
+                    (format "%s/%s/%s" dir topic file))))
+    (data/commit)))
 
 (defn- fetch-tweets
   [topic account]
