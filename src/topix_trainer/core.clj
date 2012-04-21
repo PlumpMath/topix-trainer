@@ -16,6 +16,7 @@
 (defn- train
   []
   (init/mongo)
+  (data/reset)
   (let [dir (File. "data/tweets")]
     (doseq [topic (.list dir)]
       (doseq [file (.list (File. (format "%s/%s" dir topic)))]
